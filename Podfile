@@ -6,8 +6,7 @@ target 'ImagesAPI' do
   use_frameworks!
 
   # Pods for ImagesAPI
-
-  pod 'RealmSwift'
+  
   pod 'ReactiveSwift'
   pod 'ReactiveCocoa'
   
