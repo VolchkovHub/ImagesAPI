@@ -27,4 +27,8 @@ class ImageTVC: UITableViewCell {
             searchImageView.image = UIImage(contentsOfFile: imageURL.path)
         }
     }
+    
+    override func prepareForReuse() {
+        searchImageView.image = nil
+    }
 }

@@ -17,22 +17,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICa-gf-jan">
-                        <rect key="frame" x="162.5" y="53.5" width="42" height="21"/>
+                        <rect key="frame" x="40" y="53.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lo8-SY-yCG">
-                        <rect key="frame" x="224.5" y="10" width="156.5" height="108"/>
+                        <rect key="frame" x="276" y="26.5" width="75" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="Rpk-hC-t1e"/>
+                            <constraint firstAttribute="height" constant="75" id="fAb-Ub-5aH"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ICa-gf-jan" firstAttribute="centerY" secondItem="lo8-SY-yCG" secondAttribute="centerY" id="Gup-2P-24R"/>
-                    <constraint firstItem="lo8-SY-yCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Zsx-c8-ybz"/>
-                    <constraint firstItem="lo8-SY-yCG" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.4" id="k2H-Cv-QR0"/>
-                    <constraint firstAttribute="bottom" secondItem="lo8-SY-yCG" secondAttribute="bottom" constant="10" id="qBc-tj-7km"/>
-                    <constraint firstAttribute="trailing" secondItem="lo8-SY-yCG" secondAttribute="trailing" constant="10" id="w4P-Pb-nCq"/>
-                    <constraint firstItem="lo8-SY-yCG" firstAttribute="leading" secondItem="ICa-gf-jan" secondAttribute="trailing" constant="20" id="y3g-7H-VYd"/>
+                    <constraint firstItem="lo8-SY-yCG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="I75-Ix-aZB"/>
+                    <constraint firstItem="ICa-gf-jan" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="N5B-c9-ECG"/>
+                    <constraint firstAttribute="trailing" secondItem="lo8-SY-yCG" secondAttribute="trailing" constant="40" id="w4P-Pb-nCq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

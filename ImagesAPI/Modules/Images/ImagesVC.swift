@@ -54,6 +54,16 @@ class ImagesVC: UIViewController {
         viewModel.localPhotos.producer.observe(on: UIScheduler()).startWithValues { [weak self] _ in
             self?.tableView.reloadData()
         }
+        
+        viewModel.errorsOutput.observe(on: UIScheduler()).observeValues { [weak self] error in
+            let title = "Error"
+            let message = error.localizedDescription
+            let okButtonTitle = "Ok"
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: okButtonTitle, style: .default, handler: nil)
+            alert.addAction(okAction)
+            self?.present(alert, animated: true)
+        }
     }
 }
 
@@ -74,5 +84,9 @@ extension ImagesVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableCell as? ImageTVC else { return UITableViewCell() }
         cell.configure(with: viewModel.localPhotos.value[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

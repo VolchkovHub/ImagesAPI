@@ -10,6 +10,19 @@ import Foundation
 import ReactiveSwift
 import RealmSwift
 
+enum SearchError: Error {
+    case notFound
+}
+
+extension SearchError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .notFound:
+            return NSLocalizedString("Image was not found", comment: "Error")
+        }
+    }
+}
+
 final class FlickrService {
     
     let localPhotos = MutableProperty<[Photo]>([])
@@ -20,7 +33,7 @@ final class FlickrService {
         setupObservers()
     }
     
-    func searchPhoto(with text: String) {
+    func searchPhoto(with text: String, completion: @escaping (Result<Never, Error>) -> Void) {
         let api = API.Flickr.photoSearch(searchString: text)
         var components = URLComponents(string: api.path)
         components?.queryItems = api.params.map { (key, value) in
@@ -35,7 +48,9 @@ final class FlickrService {
             guard let data = data else {
                 return }
             let photosResponse = try? JSONDecoder().decode(PhotoRequestResponse.self, from: data)
-            guard let randomPhoto = photosResponse?.photos.photo.randomElement() else { return }
+            guard let randomPhoto = photosResponse?.photos.photo.randomElement() else {
+                completion(.failure(SearchError.notFound))
+                return }
             let photo = Photo(id: Int(randomPhoto.id) ?? -1,
                               farm: randomPhoto.farm,
                               server: Int(randomPhoto.server) ?? -1,

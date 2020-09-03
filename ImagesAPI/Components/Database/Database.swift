@@ -40,11 +40,6 @@ final class Database {
             }
         }
     }
-    
-    func syncPerform<Output>( _ action: @escaping (Realm) throws -> Output) throws -> Output {
-        let realm = try Realm()
-        return try action(realm)
-    }
 
     func performWrite<Output>(on queue: DispatchQueue? = nil,
                               _ action: @escaping (Realm) throws -> Output) -> AsyncTask<Output> {
