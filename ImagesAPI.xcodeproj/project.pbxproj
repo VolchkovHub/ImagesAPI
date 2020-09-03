@@ -14,12 +14,37 @@
 		85B70B7B24FE3F7D003CBDB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B70B7924FE3F7D003CBDB5 /* LaunchScreen.storyboard */; };
 		85CFA10F24FF6F9D00DA7328 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA10E24FF6F9D00DA7328 /* FlickrAPI.swift */; };
 		85CFA11224FF70B300DA7328 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA11124FF70B300DA7328 /* Photo.swift */; };
-		85CFA11524FF712600DA7328 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11324FF712600DA7328 /* RealmSwift.framework */; };
-		85CFA11724FF712600DA7328 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11424FF712600DA7328 /* Realm.framework */; };
+		85CFA11B24FF728A00DA7328 /* ImagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA11A24FF728A00DA7328 /* ImagesVM.swift */; };
+		85CFA11C24FF7A4D00DA7328 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11424FF712600DA7328 /* Realm.framework */; };
+		85CFA11D24FF7A4D00DA7328 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11424FF712600DA7328 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85CFA11F24FF7A5100DA7328 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11324FF712600DA7328 /* RealmSwift.framework */; };
+		85CFA12024FF7A5100DA7328 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFA11324FF712600DA7328 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85CFA12324FF7A9E00DA7328 /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12224FF7A9E00DA7328 /* FlickrService.swift */; };
+		85CFA12524FF809900DA7328 /* Photo+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12424FF809900DA7328 /* Photo+Response.swift */; };
+		85CFA12724FF8A7C00DA7328 /* RMPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12624FF8A7C00DA7328 /* RMPhoto.swift */; };
+		85CFA12B24FF8C8400DA7328 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12A24FF8C8400DA7328 /* Database.swift */; };
+		85CFA12D24FF8CB300DA7328 /* BackgroundWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12C24FF8CB300DA7328 /* BackgroundWorker.swift */; };
+		85CFA13024FF8CEA00DA7328 /* AsyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA12F24FF8CEA00DA7328 /* AsyncTask.swift */; };
+		85CFA13625002CBE00DA7328 /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFA13525002CBE00DA7328 /* Realm+Extension.swift */; };
 		85D274C624FE4F8F009AC417 /* ImageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D274C424FE4F8F009AC417 /* ImageTVC.swift */; };
 		85D274C724FE4F8F009AC417 /* ImageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D274C524FE4F8F009AC417 /* ImageTVC.xib */; };
 		F1AAF820D1F4FA6624C17D92 /* Pods_ImagesAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C036EF56A4967CFDCCC572 /* Pods_ImagesAPI.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85CFA11E24FF7A4D00DA7328 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				85CFA12024FF7A5100DA7328 /* RealmSwift.framework in Embed Frameworks */,
+				85CFA11D24FF7A4D00DA7328 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		560C819DE622C53FD0834D7F /* Pods-ImagesAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagesAPI.release.xcconfig"; path = "Target Support Files/Pods-ImagesAPI/Pods-ImagesAPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +60,14 @@
 		85CFA11124FF70B300DA7328 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		85CFA11324FF712600DA7328 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		85CFA11424FF712600DA7328 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		85CFA11A24FF728A00DA7328 /* ImagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesVM.swift; sourceTree = "<group>"; };
+		85CFA12224FF7A9E00DA7328 /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
+		85CFA12424FF809900DA7328 /* Photo+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Response.swift"; sourceTree = "<group>"; };
+		85CFA12624FF8A7C00DA7328 /* RMPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMPhoto.swift; sourceTree = "<group>"; };
+		85CFA12A24FF8C8400DA7328 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		85CFA12C24FF8CB300DA7328 /* BackgroundWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWorker.swift; sourceTree = "<group>"; };
+		85CFA12F24FF8CEA00DA7328 /* AsyncTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTask.swift; sourceTree = "<group>"; };
+		85CFA13525002CBE00DA7328 /* Realm+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
 		85D274C424FE4F8F009AC417 /* ImageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTVC.swift; sourceTree = "<group>"; };
 		85D274C524FE4F8F009AC417 /* ImageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTVC.xib; sourceTree = "<group>"; };
 		A68B185F4523FC9C1F09BF99 /* Pods-ImagesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagesAPI.debug.xcconfig"; path = "Target Support Files/Pods-ImagesAPI/Pods-ImagesAPI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,9 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85CFA11724FF712600DA7328 /* Realm.framework in Frameworks */,
-				85CFA11524FF712600DA7328 /* RealmSwift.framework in Frameworks */,
+				85CFA11C24FF7A4D00DA7328 /* Realm.framework in Frameworks */,
 				F1AAF820D1F4FA6624C17D92 /* Pods_ImagesAPI.framework in Frameworks */,
+				85CFA11F24FF7A5100DA7328 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +117,8 @@
 		85B70B6D24FE3F7B003CBDB5 /* ImagesAPI */ = {
 			isa = PBXGroup;
 			children = (
+				85CFA12824FF8C6E00DA7328 /* Components */,
+				85CFA12124FF7A8C00DA7328 /* Services */,
 				85CFA11024FF70A500DA7328 /* Entities */,
 				85CFA10D24FF6F7600DA7328 /* FlickrAPI */,
 				85D274C324FE4EAC009AC417 /* Resources */,
@@ -106,8 +141,53 @@
 			isa = PBXGroup;
 			children = (
 				85CFA11124FF70B300DA7328 /* Photo.swift */,
+				85CFA12424FF809900DA7328 /* Photo+Response.swift */,
+				85CFA12624FF8A7C00DA7328 /* RMPhoto.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		85CFA12124FF7A8C00DA7328 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85CFA12224FF7A9E00DA7328 /* FlickrService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		85CFA12824FF8C6E00DA7328 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				85CFA13425002CAA00DA7328 /* Extensions */,
+				85CFA12E24FF8CDE00DA7328 /* Utils */,
+				85CFA12924FF8C7800DA7328 /* Database */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		85CFA12924FF8C7800DA7328 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				85CFA12A24FF8C8400DA7328 /* Database.swift */,
+				85CFA12C24FF8CB300DA7328 /* BackgroundWorker.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		85CFA12E24FF8CDE00DA7328 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				85CFA12F24FF8CEA00DA7328 /* AsyncTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		85CFA13425002CAA00DA7328 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85CFA13525002CBE00DA7328 /* Realm+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		85D274C024FE4E8A009AC417 /* Modules */ = {
@@ -123,6 +203,7 @@
 			children = (
 				85D274C224FE4E9E009AC417 /* Cells */,
 				85B70B7224FE3F7B003CBDB5 /* ImagesVC.swift */,
+				85CFA11A24FF728A00DA7328 /* ImagesVM.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -168,6 +249,7 @@
 				85B70B6824FE3F7A003CBDB5 /* Frameworks */,
 				85B70B6924FE3F7A003CBDB5 /* Resources */,
 				4AA0B8B5C8D7AF4E6B20A262 /* [CP] Embed Pods Frameworks */,
+				85CFA11E24FF7A4D00DA7328 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,11 +354,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				85CFA11224FF70B300DA7328 /* Photo.swift in Sources */,
+				85CFA12B24FF8C8400DA7328 /* Database.swift in Sources */,
+				85CFA11B24FF728A00DA7328 /* ImagesVM.swift in Sources */,
+				85CFA12324FF7A9E00DA7328 /* FlickrService.swift in Sources */,
 				85B70B7324FE3F7B003CBDB5 /* ImagesVC.swift in Sources */,
+				85CFA13625002CBE00DA7328 /* Realm+Extension.swift in Sources */,
 				85D274C624FE4F8F009AC417 /* ImageTVC.swift in Sources */,
 				85B70B6F24FE3F7B003CBDB5 /* AppDelegate.swift in Sources */,
+				85CFA12D24FF8CB300DA7328 /* BackgroundWorker.swift in Sources */,
+				85CFA12524FF809900DA7328 /* Photo+Response.swift in Sources */,
 				85B70B7124FE3F7B003CBDB5 /* SceneDelegate.swift in Sources */,
 				85CFA10F24FF6F9D00DA7328 /* FlickrAPI.swift in Sources */,
+				85CFA13024FF8CEA00DA7328 /* AsyncTask.swift in Sources */,
+				85CFA12724FF8A7C00DA7328 /* RMPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

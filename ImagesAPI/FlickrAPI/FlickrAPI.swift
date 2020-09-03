@@ -13,7 +13,6 @@ enum API {}
 extension API {
     enum Flickr {
         case photoSearch(searchString: String)
-        case getImage(photo: Photo)
         
         private var baseURL: URL {
             return URL(string: "https://www.flickr.com/")!
@@ -27,8 +26,6 @@ extension API {
             switch self {
             case .photoSearch:
                 return baseURL.absoluteString + "services/rest/"
-            case .getImage(let photo):
-                return "https://farm\(photo.farmId).staticflickr.com/\(photo.serverId)/\(photo.id)_\(photo.secret).jpg"
             }
         }
         
@@ -39,9 +36,7 @@ extension API {
                         "text": searchString,
                         "api_key": apiKey,
                         "format": "json",
-                        "nojsoncallback": 1]
-            case .getImage:
-                return [:]
+                        "nojsoncallback": "1"]
             }
         }
     }

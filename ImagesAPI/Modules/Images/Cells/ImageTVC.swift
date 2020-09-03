@@ -9,8 +9,22 @@
 import UIKit
 
 class ImageTVC: UITableViewCell {
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }    
+    
+    @IBOutlet weak var searchLabel: UILabel!
+    @IBOutlet weak var searchImageView: UIImageView!
+    
+    func configure(with photo: Photo) {
+        searchLabel.text = photo.searchText
+        loadImage(for: photo)
+    }
+    
+    private func loadImage(for photo: Photo) {
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        if let dirPath = paths.first {
+           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("\(photo.id).jpg")
+            searchImageView.image = UIImage(contentsOfFile: imageURL.path)
+        }
+    }
 }

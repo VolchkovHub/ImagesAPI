@@ -10,7 +10,12 @@ import Foundation
 
 struct Photo {
     var id: Int
-    var farmId: Int
-    var serverId: Int
+    var farm: Int
+    var server: Int
     var secret: String
+    var searchText: String
+    
+    var imageURL: URL? {
+        URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg")
+    }
 }

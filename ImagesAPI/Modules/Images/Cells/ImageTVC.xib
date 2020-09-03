@@ -9,15 +9,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImageTVC" id="KGk-i7-Jjw" customClass="ImageTVC" customModule="ImagesAPI" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImageTVC" rowHeight="128" id="KGk-i7-Jjw" customClass="ImageTVC" customModule="ImagesAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="391" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="391" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICa-gf-jan">
+                        <rect key="frame" x="162.5" y="53.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lo8-SY-yCG">
+                        <rect key="frame" x="224.5" y="10" width="156.5" height="108"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ICa-gf-jan" firstAttribute="centerY" secondItem="lo8-SY-yCG" secondAttribute="centerY" id="Gup-2P-24R"/>
+                    <constraint firstItem="lo8-SY-yCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Zsx-c8-ybz"/>
+                    <constraint firstItem="lo8-SY-yCG" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.4" id="k2H-Cv-QR0"/>
+                    <constraint firstAttribute="bottom" secondItem="lo8-SY-yCG" secondAttribute="bottom" constant="10" id="qBc-tj-7km"/>
+                    <constraint firstAttribute="trailing" secondItem="lo8-SY-yCG" secondAttribute="trailing" constant="10" id="w4P-Pb-nCq"/>
+                    <constraint firstItem="lo8-SY-yCG" firstAttribute="leading" secondItem="ICa-gf-jan" secondAttribute="trailing" constant="20" id="y3g-7H-VYd"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="141" y="121"/>
+            <connections>
+                <outlet property="searchImageView" destination="lo8-SY-yCG" id="ZIK-Zu-d7D"/>
+                <outlet property="searchLabel" destination="ICa-gf-jan" id="VXS-dq-QRC"/>
+            </connections>
+            <point key="canvasLocation" x="192.0289855072464" y="148.66071428571428"/>
         </tableViewCell>
     </objects>
 </document>

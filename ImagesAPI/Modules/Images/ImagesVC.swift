@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class ImagesVC: UIViewController {
     
     private let searchBar = UISearchBar()
     private let tableView = UITableView()
     private let cellIdentifier = "ImageTVC"
+    private let viewModel = ImagesVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSearchBar()
         setupTable()
+        setupObservers()
     }
     
     private func setupSearchBar() {
+        searchBar.delegate = self
+        
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.backgroundImage = UIImage()
         view.addSubview(searchBar)
@@ -32,7 +37,8 @@ class ImagesVC: UIViewController {
     }
     
     private func setupTable() {
-        tableView.register(ImageTVC.self, forCellReuseIdentifier: cellIdentifier)
+        let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -43,16 +49,30 @@ class ImagesVC: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
+    
+    private func setupObservers() {
+        viewModel.localPhotos.producer.observe(on: UIScheduler()).startWithValues { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+    }
+}
+
+extension ImagesVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        viewModel.searchPhoto(with: searchText)
+    }
 }
 
 extension ImagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.localPhotos.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         guard let cell = tableCell as? ImageTVC else { return UITableViewCell() }
+        cell.configure(with: viewModel.localPhotos.value[indexPath.row])
         return cell
     }
 }
